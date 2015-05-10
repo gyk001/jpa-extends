@@ -9,7 +9,7 @@ import com.sishuok.es.common.test.BaseIT;
 import org.junit.Test;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-8 下午3:01
  * <p>Version: 1.0
  */

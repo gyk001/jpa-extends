@@ -7,7 +7,7 @@ package com.sishuok.es.common.entity;
 
 /**
  * <p>学校类型</p>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-14 下午2:15
  * <p>Version: 1.0
  */

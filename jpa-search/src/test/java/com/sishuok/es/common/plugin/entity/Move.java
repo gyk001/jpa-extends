@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-4 上午9:38
  * <p>Version: 1.0
  */

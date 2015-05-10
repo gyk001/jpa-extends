@@ -16,7 +16,7 @@ import java.io.*;
 import java.net.URLEncoder;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-6-15 下午8:00
  * <p>Version: 1.0
  */

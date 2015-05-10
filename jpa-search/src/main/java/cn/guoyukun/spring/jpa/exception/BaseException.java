@@ -11,7 +11,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * 基础异常
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-3-11 下午8:19
  * <p>Version: 1.0
  */

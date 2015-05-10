@@ -34,7 +34,7 @@ import java.net.URLEncoder;
 
 /**
  * ajax文件上传/下载
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-11 上午8:46
  * <p>Version: 1.0
  */

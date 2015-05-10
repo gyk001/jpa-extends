@@ -22,7 +22,7 @@ import java.util.*;
 
 /**
  * 加速spring启动，通过移除bean定义实现
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-6-3 下午9:47
  * <p>Version: 1.0
  */

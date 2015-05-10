@@ -29,7 +29,7 @@ import java.util.List;
  *     JpaRepository接口+<jpa:repositories repository-impl-postfix="Impl"></jpa:repositories>中的repository-impl-postfix
  *     repository-impl-postfix默认为Impl
  * </pre>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-14 下午4:30
  * <p>Version: 1.0
  */

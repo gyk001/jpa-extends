@@ -19,7 +19,7 @@ import org.springframework.util.StringUtils;
 import javax.persistence.Query;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-16 下午4:20
  * <p>Version: 1.0
  */

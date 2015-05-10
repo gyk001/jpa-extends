@@ -8,7 +8,7 @@ package cn.guoyukun.spring.jpa.entity.search.exception;
 import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-17 上午11:59
  * <p>Version: 1.0
  */

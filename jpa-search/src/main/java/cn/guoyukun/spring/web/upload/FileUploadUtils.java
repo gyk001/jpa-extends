@@ -28,7 +28,7 @@ import static org.apache.commons.fileupload.FileUploadBase.FileSizeLimitExceeded
 
 /**
  * 文件上传工具类
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-12 上午8:32
  * <p>Version: 1.0
  */

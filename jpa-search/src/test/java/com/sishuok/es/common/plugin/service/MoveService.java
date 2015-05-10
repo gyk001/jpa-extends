@@ -12,7 +12,7 @@ import com.sishuok.es.common.plugin.entity.Move;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-20 下午2:22
  * <p>Version: 1.0
  */

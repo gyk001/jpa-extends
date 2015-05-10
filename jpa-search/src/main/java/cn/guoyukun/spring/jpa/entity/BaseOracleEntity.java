@@ -18,7 +18,7 @@ import java.io.Serializable;
  * 子类只需要在类头上加 @SequenceGenerator(name="seq", sequenceName="你的sequence名字")
  * <p/>
  * <p/>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-12 下午4:05
  * <p>Version: 1.0
  */

@@ -15,7 +15,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * 基础cache切面
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-20 下午2:06
  * <p>Version: 1.0
  */

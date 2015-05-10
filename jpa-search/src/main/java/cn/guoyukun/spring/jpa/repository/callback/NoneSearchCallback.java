@@ -10,7 +10,7 @@ import cn.guoyukun.spring.jpa.entity.search.Searchable;
 import javax.persistence.Query;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-16 下午8:10
  * <p>Version: 1.0
  */

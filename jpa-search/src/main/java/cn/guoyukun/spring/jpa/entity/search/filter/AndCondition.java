@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * and 条件
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-24 下午2:51
  * <p>Version: 1.0
  */

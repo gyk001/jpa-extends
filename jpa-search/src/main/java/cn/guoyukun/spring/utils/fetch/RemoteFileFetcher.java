@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 定时抓取远程文件
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-27 下午2:55
  * <p>Version: 1.0
  */

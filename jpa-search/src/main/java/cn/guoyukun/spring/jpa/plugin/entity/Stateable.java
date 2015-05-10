@@ -7,7 +7,7 @@ package cn.guoyukun.spring.jpa.plugin.entity;
 
 /**
  * <p>实体实现该接口，表示需要进行状态管理
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-12 下午4:25
  * <p>Version: 1.0
  */

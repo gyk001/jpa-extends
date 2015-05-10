@@ -20,7 +20,7 @@ import java.sql.Types;
 
 /**
  * 将对象 转换为Json字符串
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-4-16 上午8:32
  * <p>Version: 1.0
  */

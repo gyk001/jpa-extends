@@ -22,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * <p>测试DDD Specification，Repository必须继承JpaSpecificationExecutor</p>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-14 下午5:02
  * <p>Version: 1.0
  */

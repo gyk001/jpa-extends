@@ -6,7 +6,7 @@
 package cn.guoyukun.spring.jpa;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-7 下午5:14
  * <p>Version: 1.0
  */

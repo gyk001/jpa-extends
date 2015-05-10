@@ -11,7 +11,7 @@ import org.ocpsoft.prettytime.PrettyTime;
 import java.util.Date;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-3-22 下午12:18
  * <p>Version: 1.0
  */

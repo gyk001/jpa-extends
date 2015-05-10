@@ -17,7 +17,7 @@ import java.io.*;
  * 只能判断常见的GBK，UTF-16LE，UTF-16BE,UTF-8，其分别对应window下的记事本可另存为的编码类型ANSI,Unicode,Unicode big endian,UTF-8
  * <p/>
  * <p/>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-7-5 下午12:09
  * <p>Version: 1.0
  */

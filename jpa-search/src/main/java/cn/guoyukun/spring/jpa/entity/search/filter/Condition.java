@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * <p>查询过滤条件</p>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-15 上午7:12
  * <p>Version: 1.0
  */

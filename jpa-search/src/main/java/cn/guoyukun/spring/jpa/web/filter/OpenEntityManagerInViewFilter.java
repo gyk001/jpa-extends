@@ -17,7 +17,7 @@ import cn.guoyukun.spring.web.filter.BaseFilter;
 /**
  * 委托给实际的OpenEntityManagerInViewFilter；
  * 但加入了过滤功能；这样有些地址不需要EntityManager就不需要拦截了
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-6-3 下午2:59
  * <p>Version: 1.0
  */

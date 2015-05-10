@@ -21,7 +21,7 @@ import cn.guoyukun.spring.utils.ReflectUtils;
 
 /**
  * 基础控制器
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-23 下午3:56
  * <p>Version: 1.0
  */

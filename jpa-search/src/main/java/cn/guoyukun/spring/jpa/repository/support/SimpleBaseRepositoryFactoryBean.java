@@ -29,7 +29,7 @@ import cn.guoyukun.spring.jpa.repository.support.annotation.SearchableQuery;
 /**
  * 基础Repostory简单实现 factory bean
  * 请参考 spring-data-jpa-reference [1.4.2. Adding custom behaviour to all repositories]
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-5 上午11:57
  * <p>Version: 1.0
  */

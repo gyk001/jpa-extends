@@ -11,7 +11,7 @@ import org.junit.Test;
 import cn.guoyukun.spring.utils.html.HtmlUtils;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-27 下午2:12
  * <p>Version: 1.0
  */

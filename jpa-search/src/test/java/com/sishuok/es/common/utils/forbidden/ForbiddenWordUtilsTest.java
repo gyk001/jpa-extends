@@ -15,7 +15,7 @@ import org.junit.Test;
 import cn.guoyukun.spring.utils.forbidden.ForbiddenWordUtils;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-27 下午3:25
  * <p>Version: 1.0
  */

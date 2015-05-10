@@ -32,7 +32,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * <p>测试查询条件</p>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-15 下午12:21
  * <p>Version: 1.0
  */

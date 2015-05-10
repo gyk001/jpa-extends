@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * //验证结果
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-7 下午7:11
  * <p>Version: 1.0
  */

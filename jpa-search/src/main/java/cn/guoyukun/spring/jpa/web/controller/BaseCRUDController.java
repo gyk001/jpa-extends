@@ -30,7 +30,7 @@ import cn.guoyukun.spring.web.controller.permission.PermissionList;
 
 /**
  * 基础CRUD 控制器
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-23 下午1:20
  * <p>Version: 1.0
  */

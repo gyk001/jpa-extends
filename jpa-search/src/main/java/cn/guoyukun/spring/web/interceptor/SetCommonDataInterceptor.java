@@ -24,7 +24,7 @@ import cn.guoyukun.spring.jpa.Constants;
  * <p/>
  * 1、ctx---->request.contextPath
  * 2、currentURL---->当前地址
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-22 下午4:35
  * <p>Version: 1.0
  */

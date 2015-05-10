@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
 
 /**
  * 屏蔽关键词 工具类
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-27 下午2:37
  * <p>Version: 1.0
  */

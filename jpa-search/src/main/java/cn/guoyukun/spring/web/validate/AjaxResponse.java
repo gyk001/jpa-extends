@@ -6,7 +6,7 @@
 package cn.guoyukun.spring.web.validate;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-8 上午11:10
  * <p>Version: 1.0
  */

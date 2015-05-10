@@ -11,7 +11,7 @@ import com.octo.captcha.service.captchastore.FastHashMapCaptchaStore;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-3-22 下午3:46
  * <p>Version: 1.0
  */

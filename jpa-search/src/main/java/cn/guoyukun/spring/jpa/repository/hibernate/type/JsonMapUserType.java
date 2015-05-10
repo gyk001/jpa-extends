@@ -17,7 +17,7 @@ import java.util.Map;
  * Json字符串---->Map
  * Map----->Json字符串
  * 参考http://jinnianshilongnian.iteye.com/blog/1497791
- * User: Zhang Kaitao
+ * User: 郭玉昆
  * Date: 11-7-16
  * Time: 下午5:45
  */

@@ -6,7 +6,7 @@
 package cn.guoyukun.spring.jpa.entity.search.exception;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-17 上午11:44
  * <p>Version: 1.0
  */

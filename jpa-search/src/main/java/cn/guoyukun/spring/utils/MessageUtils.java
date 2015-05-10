@@ -8,7 +8,7 @@ package cn.guoyukun.spring.utils;
 import org.springframework.context.MessageSource;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-9 下午8:49
  * <p>Version: 1.0
  */

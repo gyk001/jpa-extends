@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
 import static org.junit.Assert.assertEquals;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-23 下午3:42
  * <p>Version: 1.0
  */

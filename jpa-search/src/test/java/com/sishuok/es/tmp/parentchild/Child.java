@@ -11,7 +11,7 @@ import org.hibernate.annotations.FetchMode;
 import javax.persistence.*;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-8 下午2:57
  * <p>Version: 1.0
  */

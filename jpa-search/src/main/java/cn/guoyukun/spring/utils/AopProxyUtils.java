@@ -19,7 +19,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * AOP代理工具类
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-7-3 下午12:29
  * <p>Version: 1.0
  */

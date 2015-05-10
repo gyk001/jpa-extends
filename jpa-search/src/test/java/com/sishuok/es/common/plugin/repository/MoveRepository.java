@@ -10,7 +10,7 @@ import cn.guoyukun.spring.jpa.repository.BaseRepository;
 import com.sishuok.es.common.plugin.entity.Move;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-20 下午2:29
  * <p>Version: 1.0
  */

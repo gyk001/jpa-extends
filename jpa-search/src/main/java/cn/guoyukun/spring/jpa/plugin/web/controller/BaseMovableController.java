@@ -23,7 +23,7 @@ import cn.guoyukun.spring.utils.MessageUtils;
 import cn.guoyukun.spring.web.validate.AjaxResponse;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-22 下午4:15
  * <p>Version: 1.0
  */

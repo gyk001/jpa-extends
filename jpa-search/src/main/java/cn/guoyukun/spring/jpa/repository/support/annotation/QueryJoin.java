@@ -4,7 +4,7 @@ import javax.persistence.criteria.JoinType;
 import java.lang.annotation.*;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-10-18
  * <p>Version: 1.0
  */

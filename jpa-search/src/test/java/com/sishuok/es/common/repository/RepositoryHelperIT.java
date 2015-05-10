@@ -27,7 +27,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-5 上午9:10
  * <p>Version: 1.0
  */

@@ -19,7 +19,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-14 下午5:09
  * <p>Version: 1.0
  */

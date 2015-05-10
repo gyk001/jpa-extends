@@ -10,7 +10,7 @@ import org.apache.commons.fileupload.FileUploadException;
 import java.util.Arrays;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-3-8 下午8:50
  * <p>Version: 1.0
  */

@@ -27,7 +27,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-15 上午11:46
  * <p>Version: 1.0
  */

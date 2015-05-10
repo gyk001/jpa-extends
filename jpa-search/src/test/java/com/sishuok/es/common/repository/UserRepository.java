@@ -25,7 +25,7 @@ import java.util.List;
 
 /**
  * <p>用户仓库</p>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-14 下午2:18
  * <p>Version: 1.0
  */

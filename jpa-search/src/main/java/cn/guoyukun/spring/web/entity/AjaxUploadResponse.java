@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * jquery File Upload 文件上传响应
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-2-13 下午4:37
  * <p>Version: 1.0
  */

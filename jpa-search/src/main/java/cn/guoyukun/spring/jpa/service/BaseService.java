@@ -24,7 +24,7 @@ import com.google.common.collect.Lists;
  * <p/>
  * <p>泛型 ： M 表示实体类型；ID表示主键类型
  * <p/>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-12 下午4:43
  * <p>Version: 1.0
  */

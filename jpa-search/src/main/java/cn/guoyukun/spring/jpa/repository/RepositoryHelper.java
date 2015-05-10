@@ -26,7 +26,7 @@ import cn.guoyukun.spring.jpa.repository.support.annotation.EnableQueryCache;
 
 /**
  * 仓库辅助类
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-4-14 下午5:28
  * <p>Version: 1.0
  */

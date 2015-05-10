@@ -11,7 +11,7 @@ package cn.guoyukun.spring.jpa.plugin.entity;
  * 1、使用注解元数据
  * 2、写一个 getColumn() 方法 返回列名
  * <p/>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-12 下午4:09
  * <p>Version: 1.0
  */

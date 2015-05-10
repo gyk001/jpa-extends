@@ -52,7 +52,7 @@ import com.google.common.collect.Sets;
 
 /**
  * <p>抽象基础Custom Repository 实现</p>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-15 下午7:33
  * <p>Version: 1.0
  */

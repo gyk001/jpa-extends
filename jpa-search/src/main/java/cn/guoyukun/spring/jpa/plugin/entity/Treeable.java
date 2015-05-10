@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * <p>实体实现该接口表示想要实现树结构
  * <p/>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-12 下午4:18
  * <p>Version: 1.0
  */

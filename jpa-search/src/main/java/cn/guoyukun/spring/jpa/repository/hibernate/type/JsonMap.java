@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Map;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-3-20 下午7:45
  * <p>Version: 1.0
  */

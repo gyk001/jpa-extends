@@ -14,7 +14,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-5-8 下午2:56
  * <p>Version: 1.0
  */

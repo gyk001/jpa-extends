@@ -22,7 +22,7 @@ import java.util.Enumeration;
 
 /**
  * <p>输出请求信息：URI、参数、header、cookie等</p>
- * <p>User: Zhang Kaitao
+ * <p>User: 郭玉昆
  * <p>Date: 13-1-18 上午7:22
  * <p>Version: 1.0
  */
