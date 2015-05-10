@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.common.plugin.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
-import com.sishuok.es.common.entity.validate.group.Create;
+import cn.guoyukun.spring.jpa.entity.BaseEntity;
+import cn.guoyukun.spring.jpa.entity.validate.group.Create;
+import cn.guoyukun.spring.jpa.plugin.entity.Movable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

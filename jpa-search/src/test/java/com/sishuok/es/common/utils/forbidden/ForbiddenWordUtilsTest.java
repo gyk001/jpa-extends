@@ -12,6 +12,8 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import cn.guoyukun.spring.utils.forbidden.ForbiddenWordUtils;
+
 /**
  * <p>User: Zhang Kaitao
  * <p>Date: 13-5-27 下午3:25

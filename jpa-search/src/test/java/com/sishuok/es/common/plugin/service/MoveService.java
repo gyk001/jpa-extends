@@ -5,8 +5,10 @@
  */
 package com.sishuok.es.common.plugin.service;
 
+import cn.guoyukun.spring.jpa.plugin.serivce.BaseMovableService;
+
 import com.sishuok.es.common.plugin.entity.Move;
-import com.sishuok.es.common.plugin.serivce.BaseMovableService;
+
 import org.springframework.stereotype.Service;
 
 /**

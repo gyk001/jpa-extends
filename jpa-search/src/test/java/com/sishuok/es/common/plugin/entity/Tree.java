@@ -5,7 +5,9 @@
  */
 package com.sishuok.es.common.plugin.entity;
 
-import com.sishuok.es.common.entity.BaseEntity;
+import cn.guoyukun.spring.jpa.entity.BaseEntity;
+import cn.guoyukun.spring.jpa.plugin.entity.Treeable;
+
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.Formula;
 

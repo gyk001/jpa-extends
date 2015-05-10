@@ -5,7 +5,9 @@
  */
 package com.sishuok.es.common.web.bind.method.annotation;
 
-import com.sishuok.es.common.web.bind.annotation.PageableDefaults;
+import cn.guoyukun.spring.jpa.web.bind.annotation.PageableDefaults;
+import cn.guoyukun.spring.jpa.web.bind.method.annotation.PageableMethodArgumentResolver;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -5,13 +5,17 @@
  */
 package com.sishuok.es.common.entity.search;
 
+import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
+import cn.guoyukun.spring.jpa.entity.search.Searchable;
+import cn.guoyukun.spring.jpa.entity.search.exception.InvlidSearchOperatorException;
+import cn.guoyukun.spring.jpa.entity.search.filter.SearchFilterHelper;
+import cn.guoyukun.spring.jpa.entity.search.utils.SearchableConvertUtils;
+
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.sishuok.es.common.entity.Sex;
 import com.sishuok.es.common.entity.User;
-import com.sishuok.es.common.entity.search.exception.InvlidSearchOperatorException;
-import com.sishuok.es.common.entity.search.filter.SearchFilterHelper;
-import com.sishuok.es.common.entity.search.utils.SearchableConvertUtils;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

@@ -5,8 +5,10 @@
  */
 package com.sishuok.es.common.service;
 
+import cn.guoyukun.spring.jpa.repository.BaseRepository;
+
 import com.sishuok.es.common.entity.User;
-import com.sishuok.es.common.repository.BaseRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.DependsOn;

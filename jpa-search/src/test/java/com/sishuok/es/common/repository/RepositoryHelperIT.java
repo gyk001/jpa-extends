@@ -5,12 +5,15 @@
  */
 package com.sishuok.es.common.repository;
 
+import cn.guoyukun.spring.jpa.entity.search.Searchable;
+import cn.guoyukun.spring.jpa.repository.RepositoryHelper;
+import cn.guoyukun.spring.jpa.repository.callback.DefaultSearchCallback;
+import cn.guoyukun.spring.jpa.repository.callback.SearchCallback;
+
 import com.sishuok.es.common.entity.Sex;
 import com.sishuok.es.common.entity.User;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.repository.callback.DefaultSearchCallback;
-import com.sishuok.es.common.repository.callback.SearchCallback;
 import com.sishuok.es.common.test.BaseUserIT;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,6 +23,7 @@ import org.springframework.data.domain.Sort;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
+
 import java.util.List;
 
 /**

@@ -8,6 +8,8 @@ package com.sishuok.es.common.utils.html;
 import org.junit.Assert;
 import org.junit.Test;
 
+import cn.guoyukun.spring.utils.html.HtmlUtils;
+
 /**
  * <p>User: Zhang Kaitao
  * <p>Date: 13-5-27 下午2:12

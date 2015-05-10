@@ -5,8 +5,9 @@
  */
 package com.sishuok.es.common.plugin.repository;
 
+import cn.guoyukun.spring.jpa.repository.BaseRepository;
+
 import com.sishuok.es.common.plugin.entity.Tree;
-import com.sishuok.es.common.repository.BaseRepository;
 
 /**
  * <p>User: Zhang Kaitao

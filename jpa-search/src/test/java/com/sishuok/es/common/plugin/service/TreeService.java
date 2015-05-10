@@ -5,8 +5,10 @@
  */
 package com.sishuok.es.common.plugin.service;
 
+import cn.guoyukun.spring.jpa.plugin.serivce.BaseTreeableService;
+
 import com.sishuok.es.common.plugin.entity.Tree;
-import com.sishuok.es.common.plugin.serivce.BaseTreeableService;
+
 import org.springframework.stereotype.Service;
 
 /**

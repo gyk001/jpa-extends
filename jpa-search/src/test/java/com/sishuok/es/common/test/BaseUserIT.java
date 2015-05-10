@@ -5,7 +5,14 @@
  */
 package com.sishuok.es.common.test;
 
-import com.sishuok.es.common.entity.*;
+import cn.guoyukun.spring.jpa.entity.*;
+
+import com.sishuok.es.common.entity.BaseInfo;
+import com.sishuok.es.common.entity.SchoolInfo;
+import com.sishuok.es.common.entity.SchoolType;
+import com.sishuok.es.common.entity.Sex;
+import com.sishuok.es.common.entity.User;
+
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.sql.Timestamp;

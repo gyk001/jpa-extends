@@ -7,6 +7,8 @@ package com.sishuok.es.common.entity;
 
 import javax.persistence.*;
 
+import cn.guoyukun.spring.jpa.entity.BaseEntity;
+
 /**
  * <p>学校信息</p>
  * <p>User: Zhang Kaitao

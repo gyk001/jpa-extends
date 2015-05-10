@@ -5,15 +5,17 @@
  */
 package com.sishuok.es.common.repository.search;
 
+import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
+import cn.guoyukun.spring.jpa.entity.search.SearchRequest;
+import cn.guoyukun.spring.jpa.entity.search.Searchable;
+import cn.guoyukun.spring.jpa.entity.search.filter.SearchFilter;
+import cn.guoyukun.spring.jpa.entity.search.filter.SearchFilterHelper;
+
 import com.sishuok.es.common.entity.Sex;
 import com.sishuok.es.common.entity.User;
-import com.sishuok.es.common.entity.search.SearchOperator;
-import com.sishuok.es.common.entity.search.SearchRequest;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.entity.search.filter.SearchFilter;
-import com.sishuok.es.common.entity.search.filter.SearchFilterHelper;
 import com.sishuok.es.common.repository.UserRepository;
 import com.sishuok.es.common.test.BaseUserIT;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -7,7 +7,10 @@ package com.sishuok.es.common.entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import cn.guoyukun.spring.jpa.entity.BaseEntity;
+
 import javax.persistence.*;
+
 import java.util.Date;
 
 /**

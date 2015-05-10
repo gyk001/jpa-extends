@@ -5,18 +5,22 @@
  */
 package com.sishuok.es.common.repository;
 
+import cn.guoyukun.spring.jpa.entity.search.Searchable;
+import cn.guoyukun.spring.jpa.repository.RepositoryHelper;
+import cn.guoyukun.spring.jpa.repository.callback.DefaultSearchCallback;
+import cn.guoyukun.spring.jpa.repository.callback.SearchCallback;
+
 import com.sishuok.es.common.entity.BaseInfo;
 import com.sishuok.es.common.entity.SchoolInfo;
 import com.sishuok.es.common.entity.User;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.repository.callback.DefaultSearchCallback;
-import com.sishuok.es.common.repository.callback.SearchCallback;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
 import java.util.List;
 
 /**

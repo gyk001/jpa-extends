@@ -5,12 +5,14 @@
  */
 package com.sishuok.es.common.web.bind.method.annotation;
 
-import com.sishuok.es.common.entity.search.SearchOperator;
-import com.sishuok.es.common.entity.search.Searchable;
-import com.sishuok.es.common.entity.search.filter.SearchFilter;
-import com.sishuok.es.common.entity.search.filter.SearchFilterHelper;
-import com.sishuok.es.common.web.bind.annotation.PageableDefaults;
-import com.sishuok.es.common.web.bind.annotation.SearchableDefaults;
+import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
+import cn.guoyukun.spring.jpa.entity.search.Searchable;
+import cn.guoyukun.spring.jpa.entity.search.filter.SearchFilter;
+import cn.guoyukun.spring.jpa.entity.search.filter.SearchFilterHelper;
+import cn.guoyukun.spring.jpa.web.bind.annotation.PageableDefaults;
+import cn.guoyukun.spring.jpa.web.bind.annotation.SearchableDefaults;
+import cn.guoyukun.spring.jpa.web.bind.method.annotation.SearchableMethodArgumentResolver;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -5,9 +5,11 @@
  */
 package com.sishuok.es.common.service;
 
+import cn.guoyukun.spring.jpa.entity.search.Searchable;
+
 import com.sishuok.es.common.entity.User;
-import com.sishuok.es.common.entity.search.Searchable;
 import com.sishuok.es.common.test.BaseUserIT;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
