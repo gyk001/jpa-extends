@@ -11,14 +11,14 @@
   <name>Spring :: JPA :: Search</name>
   <url>https://github.com/gyk001/jpa</url>
   <scm>
-    <connection>scm:git:git@github.com:gyk001/jpa-common.git</connection>
-    <developerConnection>scm:git:git@github.com:gyk001/jpa.git</developerConnection>
-    <url>https://github.com/gyk001/jpa</url>
+    <connection>scm:git:git@github.com:gyk001/jpa-extends.git</connection>
+    <developerConnection>scm:git:git@github.com:gyk001/jpa-extends.git</developerConnection>
+    <url>https://github.com/gyk001/jpa-extends</url>
     <tag>v0.0.1</tag>
   </scm>
   <issueManagement>
     <system>github</system>
-    <url>https://github.com/gyk001/jpa/issues</url>
+    <url>https://github.com/gyk001/jpa-extends/issues</url>
   </issueManagement>
   <properties>
     <logback.version>1.1.2</logback.version>

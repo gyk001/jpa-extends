@@ -11,10 +11,9 @@
 		<module>jpa-search</module>
 	</modules>
   <scm>
-    <connection>scm:git:git@github.com:gyk001/jpa.git</connection>
-    <developerConnection>scm:git:git@github.com:gyk001/jpa.git</developerConnection>
-    <url>https://github.com/gyk001/jpa</url>
-    <tag>v0.0.1</tag>
+    <connection>scm:git:git@github.com:gyk001/jpa-extends.git</connection>
+    <developerConnection>scm:git:git@github.com:gyk001/jpa-extends.git</developerConnection>
+    <url>https://github.com/gyk001/jpa-extends</url>
   </scm>
   <issueManagement>
     <system>github</system>
