@@ -4,17 +4,16 @@
   <parent>
     <groupId>cn.guoyukun.spring</groupId>
     <artifactId>jpa</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>jpa-search</artifactId>
   <name>Spring :: JPA :: Search</name>
-  <url>https://github.com/gyk001/jpa</url>
+  <url>https://github.com/gyk001/jpa-extends</url>
   <scm>
     <connection>scm:git:git@github.com:gyk001/jpa-extends.git</connection>
     <developerConnection>scm:git:git@github.com:gyk001/jpa-extends.git</developerConnection>
     <url>https://github.com/gyk001/jpa-extends</url>
-    <tag>v0.0.1</tag>
   </scm>
   <issueManagement>
     <system>github</system>

@@ -2,11 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.guoyukun.spring</groupId>
 	<artifactId>jpa</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>Spring :: Data :: JPA :: Extends</name>
 	<packaging>pom</packaging>
 	<description>Spring :: JPA :: Extends</description>
-	<url>https://github.com/gyk001/jpa</url>
+	<url>https://github.com/gyk001/jpa-extends</url>
 	<modules>
 		<module>jpa-search</module>
 	</modules>
@@ -17,7 +17,7 @@
   </scm>
   <issueManagement>
     <system>github</system>
-    <url>https://github.com/gyk001/jpa/issues</url>
+    <url>https://github.com/gyk001/jpa-extends/issues</url>
   </issueManagement>
 	<properties>
 	
