@@ -21,9 +21,11 @@
     <url>https://github.com/gyk001/jpa/issues</url>
   </issueManagement>
 	<properties>
+	
 		<project.build.targetLevel>1.7</project.build.targetLevel>
 		<project.build.sourceLevel>1.7</project.build.sourceLevel>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<repo.sinosoft.prefix>http://nexus.sinosoft.com.cn</repo.sinosoft.prefix>
 		<slf4j.version>1.6.6</slf4j.version>
 		<testng.version>6.8.8</testng.version>
 		<dom4j.version>1.6.1</dom4j.version>
@@ -194,6 +196,18 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<distributionManagement>
+        <repository>
+            <id>sinosoft-releases</id>
+            <name>Sinosoft Release Repository</name>
+            <url>${repo.sinosoft.prefix}/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>sinosoft-snapshots</id>
+            <name>Sinosoft Snapshot Repository</name>
+            <url>${repo.sinosoft.prefix}/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 	<build>
 		<pluginManagement>
 			<plugins>
