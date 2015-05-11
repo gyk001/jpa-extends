@@ -4,7 +4,7 @@
   <parent>
     <groupId>cn.guoyukun.spring</groupId>
     <artifactId>jpa</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>jpa-search</artifactId>
@@ -14,6 +14,7 @@
     <connection>scm:git:git@github.com:gyk001/jpa-extends.git</connection>
     <developerConnection>scm:git:git@github.com:gyk001/jpa-extends.git</developerConnection>
     <url>https://github.com/gyk001/jpa-extends</url>
+    <tag>v0.0.1</tag>
   </scm>
   <issueManagement>
     <system>github</system>
