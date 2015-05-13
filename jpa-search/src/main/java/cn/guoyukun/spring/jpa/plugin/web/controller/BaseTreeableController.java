@@ -5,8 +5,27 @@
  */
 package cn.guoyukun.spring.jpa.plugin.web.controller;
 
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import cn.guoyukun.spring.jpa.Constants;
-import cn.guoyukun.spring.jpa.entity.BaseEntity;
+import cn.guoyukun.spring.jpa.entity.AbstractEntity;
 import cn.guoyukun.spring.jpa.entity.enums.BooleanEnum;
 import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
 import cn.guoyukun.spring.jpa.entity.search.Searchable;
@@ -19,26 +38,12 @@ import cn.guoyukun.spring.web.controller.permission.PermissionList;
 
 import com.google.common.collect.Lists;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import javax.servlet.http.HttpServletRequest;
-
-import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-import java.util.Set;
-
 /**
  * <p>User: 郭玉昆
  * <p>Date: 13-2-22 下午4:15
  * <p>Version: 1.0
  */
-public abstract class BaseTreeableController<M extends BaseEntity<ID> & Treeable<ID>, ID extends Serializable>
+public abstract class BaseTreeableController<M extends AbstractEntity<ID> & Treeable<ID>, ID extends Serializable>
         extends BaseController<M, ID> {
 
     protected BaseTreeableService<M, ID> baseService;

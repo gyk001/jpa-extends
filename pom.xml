@@ -1,7 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>cn.guoyukun.spring</groupId>
-	<artifactId>jpa</artifactId>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+	<groupId>cn.guoyukun</groupId>
+	<artifactId>spring-jpa</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<name>Spring :: Data :: JPA :: Extends</name>
 	<packaging>pom</packaging>
@@ -197,11 +202,13 @@
 		</dependencies>
 	</dependencyManagement>
 	<distributionManagement>
+	<!-- 
         <repository>
             <id>sinosoft-releases</id>
             <name>Sinosoft Release Repository</name>
             <url>${repo.sinosoft.prefix}/content/repositories/releases/</url>
         </repository>
+         -->
         <snapshotRepository>
             <id>sinosoft-snapshots</id>
             <name>Sinosoft Snapshot Repository</name>

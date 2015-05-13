@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>cn.guoyukun.spring</groupId>
-    <artifactId>jpa</artifactId>
+    <groupId>cn.guoyukun</groupId>
+    <artifactId>spring-jpa</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-  <artifactId>jpa-search</artifactId>
+  <artifactId>spring-jpa-search</artifactId>
   <name>Spring :: JPA :: Search</name>
   <url>https://github.com/gyk001/jpa-extends</url>
   <scm>
@@ -485,12 +485,6 @@
       <groupId>org.jsoup</groupId>
       <artifactId>jsoup</artifactId>
       <version>1.7.3</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.amqp</groupId>
-      <artifactId>spring-rabbit</artifactId>
-      <version>1.3.7.RELEASE</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

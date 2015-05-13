@@ -5,7 +5,15 @@
  */
 package cn.guoyukun.spring.jpa.plugin.serivce;
 
-import cn.guoyukun.spring.jpa.entity.BaseEntity;
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
+
+import cn.guoyukun.spring.jpa.entity.AbstractEntity;
 import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
 import cn.guoyukun.spring.jpa.entity.search.Searchable;
 import cn.guoyukun.spring.jpa.entity.search.filter.SearchFilter;
@@ -19,20 +27,12 @@ import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
-
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-
 /**
  * <p>User: 郭玉昆
  * <p>Date: 13-2-22 下午5:26
  * <p>Version: 1.0
  */
-public abstract class BaseTreeableService<M extends BaseEntity<ID> & Treeable<ID>, ID extends Serializable>
+public abstract class BaseTreeableService<M extends AbstractEntity<ID> & Treeable<ID>, ID extends Serializable>
         extends BaseService<M, ID> {
 
     private final String DELETE_CHILDREN_QL;
