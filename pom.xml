@@ -202,13 +202,13 @@
 		</dependencies>
 	</dependencyManagement>
 	<distributionManagement>
-	<!-- 
+	<!-- -->
         <repository>
             <id>sinosoft-releases</id>
             <name>Sinosoft Release Repository</name>
             <url>${repo.sinosoft.prefix}/content/repositories/releases/</url>
         </repository>
-         -->
+         
         <snapshotRepository>
             <id>sinosoft-snapshots</id>
             <name>Sinosoft Snapshot Repository</name>
