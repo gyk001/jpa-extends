@@ -456,11 +456,16 @@ public abstract class BaseTreeableController<M extends AbstractEntity<ID> & Tree
         }
 
 
-        M child = newModel();
-        child.setName("新节点");
+        M child = newChild(parent);
         baseService.appendChild(parent, child);
         return convertToZtree(child, true, true);
     }
+    protected M newChild( M parent) {
+    	 M child = newModel();
+         child.setName("新节点");
+        return child;
+	}
+    
 
     @RequestMapping(value = "ajax/{id}/delete", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
@@ -542,13 +547,13 @@ public abstract class BaseTreeableController<M extends AbstractEntity<ID> & Tree
         }
 
         for (M m : models) {
-            ZTree zTree = convertToZtree(m, !async, onlySelectLeaf);
+            ZTree<ID> zTree = convertToZtree(m, !async, onlySelectLeaf);
             zTrees.add(zTree);
         }
         return zTrees;
     }
 
-    private ZTree convertToZtree(M m, boolean open, boolean onlyCheckLeaf) {
+    protected ZTree<ID> convertToZtree(M m, boolean open, boolean onlyCheckLeaf) {
         ZTree<ID> zTree = new ZTree<ID>();
         zTree.setId(m.getId());
         zTree.setpId(m.getParentId());
@@ -567,8 +572,5 @@ public abstract class BaseTreeableController<M extends AbstractEntity<ID> & Tree
         return zTree;
     }
 
-
 }
-
-
 
