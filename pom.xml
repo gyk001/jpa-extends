@@ -7,7 +7,7 @@
 	</parent>
 	<groupId>cn.guoyukun</groupId>
 	<artifactId>spring-jpa</artifactId>
-	<version>0.0.5</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<name>Spring :: Data :: JPA :: Extends</name>
 	<packaging>pom</packaging>
 	<description>Spring :: JPA :: Extends</description>
