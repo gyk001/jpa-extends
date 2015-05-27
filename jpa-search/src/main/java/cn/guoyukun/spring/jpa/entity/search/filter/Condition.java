@@ -5,14 +5,14 @@
  */
 package cn.guoyukun.spring.jpa.entity.search.filter;
 
-import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
-import cn.guoyukun.spring.jpa.entity.search.exception.InvlidSearchOperatorException;
-import cn.guoyukun.spring.jpa.entity.search.exception.SearchException;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.Assert;
 
-import java.util.List;
+import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
+import cn.guoyukun.spring.jpa.entity.search.exception.InvlidSearchOperatorException;
+import cn.guoyukun.spring.jpa.entity.search.exception.SearchException;
 
 /**
  * <p>查询过滤条件</p>
@@ -87,6 +87,15 @@ public final class Condition implements SearchFilter {
         return new Condition(searchProperty, operator, value);
     }
 
+    private boolean needEscape(SearchOperator operator, Object value){
+    	 if(value!=null && value instanceof String){
+    		 if(SearchOperator.like.equals(operator) || SearchOperator.prefixLike.equals(operator) ||SearchOperator.suffixLike.equals(operator)){
+    			 return true;
+    		 }
+    	 }
+    	 return false;
+    }
+    
     /**
      * @param searchProperty 属性名
      * @param operator       操作
@@ -95,7 +104,12 @@ public final class Condition implements SearchFilter {
     private Condition(final String searchProperty, final SearchOperator operator, final Object value) {
         this.searchProperty = searchProperty;
         this.operator = operator;
-        this.value = value;
+        if(needEscape(operator, value)){
+        	//TODO： 只在Mysql有用，oracle需要escape，不知道怎么弄
+        	this.value = ((String)value).replace("%", "\\%");
+        }else{
+        	this.value = value;
+        }
         this.key = this.searchProperty + separator + this.operator;
     }
 
@@ -194,4 +208,9 @@ public final class Condition implements SearchFilter {
                 ", value=" + value +
                 '}';
     }
+    
+//    public static void main(String[] args) {
+//		System.out.println("审%".replace("%", "\\%"));
+//		System.out.println("审%".replaceAll("%", "\\%"));
+//	}
 }
