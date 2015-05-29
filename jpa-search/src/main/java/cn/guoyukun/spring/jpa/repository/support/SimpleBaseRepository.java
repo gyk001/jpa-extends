@@ -30,7 +30,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
@@ -41,6 +40,7 @@ import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import cn.guoyukun.spring.jpa.Page4jqgrid;
 import cn.guoyukun.spring.jpa.entity.search.Searchable;
 import cn.guoyukun.spring.jpa.plugin.entity.LogicDeleteable;
 import cn.guoyukun.spring.jpa.repository.BaseRepository;
@@ -286,7 +286,7 @@ public class SimpleBaseRepository<M, ID extends Serializable> extends SimpleJpaR
     public Page<M> findAll(Specification<M> spec, Pageable pageable) {
 
         TypedQuery<M> query = getQuery(spec, pageable);
-        return pageable == null ? new PageImpl<M>(query.getResultList()) : readPage(query, pageable, spec);
+        return pageable == null ? new Page4jqgrid<M>(query.getResultList()) : readPage(query, pageable, spec);
     }
 
     /*
@@ -329,7 +329,7 @@ public class SimpleBaseRepository<M, ID extends Serializable> extends SimpleJpaR
         Long total = QueryUtils.executeCountQuery(getCountQuery(spec));
         List<M> content = total > pageable.getOffset() ? query.getResultList() : Collections.<M>emptyList();
 
-        return new PageImpl<M>(content, pageable, total);
+        return new Page4jqgrid<M>(content, pageable, total);
     }
 
     /**
@@ -461,7 +461,7 @@ public class SimpleBaseRepository<M, ID extends Serializable> extends SimpleJpaR
 
     @Override
     public Page<M> findAll(final Pageable pageable) {
-        return new PageImpl<M>(
+        return new Page4jqgrid<M>(
                 repositoryHelper.<M>findAll(findAllQL, pageable),
                 pageable,
                 repositoryHelper.count(countAllQL)
@@ -483,7 +483,7 @@ public class SimpleBaseRepository<M, ID extends Serializable> extends SimpleJpaR
     	LOG.trace("findAllQL:{} || searchable：{}",findAllQL,searchable);
         List<M> list = repositoryHelper.findAll(findAllQL, searchable, searchCallback);
         long total = searchable.hasPageable() ? count(searchable) : list.size();
-        return new PageImpl<M>(
+        return new Page4jqgrid<M>(
                 list,
                 searchable.getPage(),
                 total
