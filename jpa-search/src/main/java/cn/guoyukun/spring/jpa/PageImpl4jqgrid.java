@@ -18,7 +18,7 @@ public class PageImpl4jqgrid<T> extends PageImpl<T> {
 	
 	public long getPage4jqgrid(){
 		long totalPages = this.getTotalPages();
-		return totalPages == 0 ? 1 : totalPages;
+		return totalPages+1;
 	}
 
 	public long getTotal4jqgrid(){
