@@ -16,14 +16,24 @@ public class PageImpl4jqgrid<T> extends PageImpl<T> {
 		super(content);
 	}
 	
+	
+	/**
+	 * 当前页码
+	 * @return
+	 */
 	public long getPage4jqgrid(){
-		long totalPages = this.getTotalPages();
-		return totalPages+1;
+		long number = this.getNumber();
+		return number +1;
+		
 	}
 
+	/**
+	 * 总页数
+	 * @return
+	 */
 	public long getTotal4jqgrid(){
-		long number = this.getNumber();
-		return number == 0 ? 1 : number;
+		long totalPages = this.getTotalPages();
+		return totalPages == 0 ? 1 : totalPages;
 	}
 
 }
