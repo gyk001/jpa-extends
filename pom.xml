@@ -7,7 +7,7 @@
 	</parent>
 	<groupId>cn.guoyukun</groupId>
 	<artifactId>spring-jpa</artifactId>
-	<version>0.0.7-SNAPSHOT</version>
+	<version>0.0.7</version>
 	<name>Spring :: Data :: JPA :: Extends</name>
 	<packaging>pom</packaging>
 	<description>Spring :: JPA :: Extends</description>
@@ -19,7 +19,7 @@
     <connection>scm:git:git@github.com:gyk001/jpa-extends.git</connection>
     <developerConnection>scm:git:git@github.com:gyk001/jpa-extends.git</developerConnection>
     <url>https://github.com/gyk001/jpa-extends</url>
-    <tag>v0.0.5</tag>
+    <tag>v0.0.7</tag>
   </scm>
   <issueManagement>
     <system>github</system>
