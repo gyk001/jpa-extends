@@ -2,7 +2,7 @@ package cn.guoyukun.spring.jpa.repository.hibernate.type;
 
 import com.alibaba.fastjson.JSON;
 import org.hibernate.HibernateException;
-import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.UserType;
 
 import java.io.Serializable;
@@ -70,7 +70,7 @@ public class JsonMapUserType implements UserType, Serializable {
      * @throws SQLException
      */
     @Override
-    public Object nullSafeGet(ResultSet rs, String[] names, SessionImplementor session, Object owner) throws HibernateException, SQLException {
+    public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
         String json = rs.getString(names[0]);
 //        try {
 //            Map<Object, Object> map = objectMapper.readValue(json, HashMap.class);
@@ -87,7 +87,7 @@ public class JsonMapUserType implements UserType, Serializable {
      * 我们可以通过PreparedStateme将自定义数据写入到对应的数据库表字段
      */
     @Override
-    public void nullSafeSet(PreparedStatement st, Object value, int index, SessionImplementor session) throws HibernateException, SQLException {
+    public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
         if (value == null) {
             st.setNull(index, Types.VARCHAR);
         } else {

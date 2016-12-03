@@ -7,10 +7,9 @@ package cn.guoyukun.spring.jpa.repository.hibernate.type;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.HibernateException;
-import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.ParameterizedType;
 import org.hibernate.usertype.UserType;
 
@@ -92,7 +91,7 @@ public class LinkedHashMapToStringUserType implements UserType, ParameterizedTyp
      * @throws java.sql.SQLException
      */
     @Override
-    public Object nullSafeGet(ResultSet rs, String[] names, SessionImplementor session, Object owner) throws HibernateException, SQLException {
+    public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
         String valueStr = rs.getString(names[0]);
         if (StringUtils.isEmpty(valueStr)) {
             return newMap();
@@ -117,7 +116,7 @@ public class LinkedHashMapToStringUserType implements UserType, ParameterizedTyp
      * 我们可以通过PreparedStateme将自定义数据写入到对应的数据库表字段
      */
     @Override
-    public void nullSafeSet(PreparedStatement st, Object value, int index, SessionImplementor session) throws HibernateException, SQLException {
+    public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
         String valueStr;
         if (value == null) {
             valueStr = "";
