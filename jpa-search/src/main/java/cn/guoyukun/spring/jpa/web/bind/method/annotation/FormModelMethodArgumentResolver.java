@@ -1,15 +1,14 @@
 package cn.guoyukun.spring.jpa.web.bind.method.annotation;
 
 import cn.guoyukun.spring.jpa.web.bind.annotation.FormModel;
+import cn.guoyukun.spring.jpa.web.bind.method.annotation.mock.MockHttpServletRequest;
+import cn.guoyukun.spring.jpa.web.bind.method.annotation.mock.MockMultipartHttpServletRequest;
 import cn.guoyukun.spring.jpa.web.bind.util.MapWapper;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.TypeDescriptor;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockMultipartHttpServletRequest;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindException;
 import org.springframework.validation.DataBinder;
@@ -26,7 +25,7 @@ import org.springframework.web.util.WebUtils;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
-
+import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -72,10 +71,9 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
      * with request values via data binding and optionally validated
      * if {@code @java.validation.Valid} is present on the argument.
      *
-     * @throws org.springframework.validation.BindException
-     *                   if data binding and validation result in an error
-     *                   and the next method parameter is not of type {@link org.springframework.validation.Errors}.
-     * @throws Exception if WebDataBinder initialization fails.
+     * @throws org.springframework.validation.BindException if data binding and validation result in an error
+     *                                                      and the next method parameter is not of type {@link org.springframework.validation.Errors}.
+     * @throws Exception                                    if WebDataBinder initialization fails.
      */
     public final Object resolveArgument(MethodParameter parameter,
                                         ModelAndViewContainer mavContainer,
@@ -100,6 +98,25 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
         }
 
         target = binder.convertIfNecessary(binder.getTarget(), parameter.getParameterType());
+
+        // -----------------------------------对@Valid做兼容----------------------------------------------------
+        // 如果使用了validation校验, 则进行相应校验
+        if (parameter.hasParameterAnnotation(Valid.class)) {
+            // 如果有校验报错，会将结果放在binder.bindingResult属性中
+            // binder.validate();
+
+            // 如果参数中不包含BindingResult参数，直接抛出异常
+            if (binder.getBindingResult().hasErrors() && this.isBindExceptionRequired(binder, parameter)) {
+                throw new BindException(binder.getBindingResult());
+            }
+
+            // 关键,使Controller中接下来的BindingResult参数可以接收异常
+            Map bindingResultModel = binder.getBindingResult().getModel();
+            mavContainer.removeAttributes(bindingResultModel);
+            mavContainer.addAllAttributes(bindingResultModel);
+        }
+        // -----------------------------------对@Valid做兼容----------------------------------------------------
+
         mavContainer.addAttribute(name, target);
 
         return target;
@@ -245,7 +262,7 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
                 if (isSimpleComponent(prefixName)) { //bind simple type
                     Map<String, Object> paramValues = WebUtils.getParametersStartingWith(servletRequest, prefixName);
                     Matcher matcher = INDEX_PATTERN.matcher(prefixName);
-                    if(!matcher.matches()) { //处理如 array=1&array=2的情况
+                    if (!matcher.matches()) { //处理如 array=1&array=2的情况
                         for (Object value : paramValues.values()) {
                             targetList.add(simpleBinder.convertIfNecessary(value, componentType));
                         }
@@ -261,7 +278,7 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
                     Object component = null;
                     //先查找老的 即已经在集合中的数据（而不是新添加一个）
                     Matcher matcher = INDEX_PATTERN.matcher(prefixName);
-                    if(!matcher.matches()) {
+                    if (!matcher.matches()) {
                         throw new IllegalArgumentException("bind collection error, need integer index, key:" + key);
                     }
                     int index = Integer.valueOf(matcher.group(1));
@@ -274,7 +291,7 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
                     }
                     component = iterator.next();
 
-                    if(component == null) {
+                    if (component == null) {
                         component = BeanUtils.instantiate(componentType);
                     }
 
@@ -311,7 +328,7 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
 
             MapWapper mapWapper = ((MapWapper) binder.getTarget());
             Map target = mapWapper.getInnerMap();
-            if(target == null) {
+            if (target == null) {
                 target = new HashMap();
                 mapWapper.setInnerMap(target);
             }
@@ -337,7 +354,7 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
                 } else {
 
                     Object component = target.get(keyValue);
-                    if(component == null) {
+                    if (component == null) {
                         component = BeanUtils.instantiate(valueType);
                     }
 
@@ -361,7 +378,7 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
     }
 
     private void growCollectionIfNecessary(final Collection collection, final int index) {
-        if(index >= collection.size() && index < this.autoGrowCollectionLimit) {
+        if (index >= collection.size() && index < this.autoGrowCollectionLimit) {
             for (int i = collection.size(); i <= index; i++) {
                 collection.add(null);
             }
@@ -410,7 +427,7 @@ public class FormModelMethodArgumentResolver extends BaseMethodArgumentResolver 
         MockHttpServletRequest mockRequest = null;
         if (multipartRequest != null) {
             MockMultipartHttpServletRequest mockMultipartRequest = new MockMultipartHttpServletRequest();
-            for(MultipartFile file : multipartRequest.getFileMap().values()) {
+            for (MultipartFile file : multipartRequest.getFileMap().values()) {
                 mockMultipartRequest.addFile(new MultipartFileWrapper(getNewParameterName(file.getName(), modelPrefixName), file));
             }
             mockRequest = mockMultipartRequest;

@@ -1,16 +1,11 @@
-/**
- * Copyright (c) 2005-2012 https://github.com/zhangkaitao
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
 package cn.guoyukun.spring.jpa.entity;
-
-import java.io.Serializable;
 
 import org.springframework.data.domain.Persistable;
 
+import java.io.Serializable;
+
 /**
- * 抽象实体基类，如果主键是数据库端自动生成 请使用{@link BaseEntity}，如果是Oracle 请使用{@link BaseOracleEntity}
+ * 抽象实体基类，如果主键是数据库端自动生成 请使用{@link BaseEntity}
  * <p/>
  * <p>User: 郭玉昆
  * <p>Date: 13-3-20 下午8:38

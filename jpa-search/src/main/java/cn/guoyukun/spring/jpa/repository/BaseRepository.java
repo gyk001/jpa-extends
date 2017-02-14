@@ -1,20 +1,11 @@
-/**
- * Copyright (c) 2005-2012 https://github.com/zhangkaitao
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
 package cn.guoyukun.spring.jpa.repository;
 
 import cn.guoyukun.spring.jpa.entity.search.Searchable;
-
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * <p>抽象DAO层基类 提供一些简便方法<br/>
@@ -36,28 +27,7 @@ public interface BaseRepository<M, ID extends Serializable> extends JpaRepositor
      *
      * @param ids
      */
-    public void delete(ID[] ids);
-
-    /*
-   * (non-Javadoc)
-   * @see org.springframework.data.repository.CrudRepository#findAll()
-   */
-    List<M> findAll();
-
-    /*
-     * (non-Javadoc)
-     * @see org.springframework.data.repository.PagingAndSortingRepository#findAll(org.springframework.data.domain.Sort)
-     */
-    List<M> findAll(Sort sort);
-
-
-    /**
-     * Returns a {@link Page} of entities meeting the paging restriction provided in the {@code Pageable} object.
-     *
-     * @param pageable
-     * @return a page of entities
-     */
-    Page<M> findAll(Pageable pageable);
+    void delete(ID[] ids);
 
     /**
      * 根据条件查询所有
@@ -66,7 +36,7 @@ public interface BaseRepository<M, ID extends Serializable> extends JpaRepositor
      * @param searchable
      * @return
      */
-    public Page<M> findAll(Searchable searchable);
+    Page<M> findAll(Searchable searchable);
 
 
     /**
@@ -75,6 +45,15 @@ public interface BaseRepository<M, ID extends Serializable> extends JpaRepositor
      * @param searchable
      * @return
      */
-    public long count(Searchable searchable);
+    long count(Searchable searchable);
+
+
+    /**
+     * 根据VO属性更新实体
+     * @param id
+     * @param vo
+     * @return
+     */
+    M updateByVo(ID id, Object vo);
 
 }

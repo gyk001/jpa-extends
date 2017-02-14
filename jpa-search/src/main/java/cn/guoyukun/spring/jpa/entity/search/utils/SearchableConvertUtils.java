@@ -1,8 +1,3 @@
-/**
- * Copyright (c) 2005-2012 https://github.com/zhangkaitao
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
 package cn.guoyukun.spring.jpa.entity.search.utils;
 
 import cn.guoyukun.spring.jpa.entity.search.SearchOperator;
@@ -15,9 +10,7 @@ import cn.guoyukun.spring.jpa.entity.search.filter.Condition;
 import cn.guoyukun.spring.jpa.entity.search.filter.OrCondition;
 import cn.guoyukun.spring.jpa.entity.search.filter.SearchFilter;
 import cn.guoyukun.spring.utils.SpringUtils;
-
 import com.google.common.collect.Lists;
-
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.InvalidPropertyException;
 import org.springframework.core.convert.ConversionService;

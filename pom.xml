@@ -6,24 +6,24 @@
 		<version>7</version>
 	</parent>
 	<groupId>cn.guoyukun</groupId>
-	<artifactId>spring-jpa</artifactId>
-	<version>0.0.9-SNAPSHOT</version>
-	<name>Spring :: Data :: JPA :: Extends</name>
+	<artifactId>spring-data-jpa-searchable-parent</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<name>Spring :: Data :: JPA :: Searchable :: Parent</name>
+	<description>Spring :: Data :: JPA :: Searchable :: Parent</description>
 	<packaging>pom</packaging>
-	<description>Spring :: JPA :: Extends</description>
-	<url>https://github.com/gyk001/jpa-extends</url>
+	<url>https://github.com/gyk001/spring-data-jpa-searchable</url>
 	<modules>
 		<module>jpa-search</module>
 	</modules>
   <scm>
-    <connection>scm:git:git@github.com:gyk001/jpa-extends.git</connection>
-    <developerConnection>scm:git:git@github.com:gyk001/jpa-extends.git</developerConnection>
-    <url>https://github.com/gyk001/jpa-extends</url>
+    <connection>scm:git:git@github.com:gyk001/spring-data-jpa-searchable.git</connection>
+    <developerConnection>scm:git:git@github.com:gyk001/spring-data-jpa-searchable.git</developerConnection>
+    <url>https://github.com/gyk001/spring-data-jpa-searchable</url>
     <tag>v0.0.5</tag>
   </scm>
   <issueManagement>
     <system>github</system>
-    <url>https://github.com/gyk001/jpa-extends/issues</url>
+    <url>https://github.com/gyk001/spring-data-jpa-searchable/issues</url>
   </issueManagement>
 	<properties>
 	
@@ -202,17 +202,10 @@
 		</dependencies>
 	</dependencyManagement>
 	<distributionManagement>
-	<!-- -->
-        <repository>
-            <id>sinosoft-releases</id>
-            <name>Sinosoft Release Repository</name>
-            <url>${repo.sinosoft.prefix}/content/repositories/releases/</url>
-        </repository>
-         
         <snapshotRepository>
-            <id>sinosoft-snapshots</id>
-            <name>Sinosoft Snapshot Repository</name>
-            <url>${repo.sinosoft.prefix}/content/repositories/snapshots/</url>
+            <id>ali-snapshots</id>
+            <name>Ali Snapshot Repository</name>
+            <url>http://repo.alibaba-inc.com/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 	<build>
@@ -243,6 +236,21 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.1</version>
+					<configuration>
+						<attach>true</attach>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>

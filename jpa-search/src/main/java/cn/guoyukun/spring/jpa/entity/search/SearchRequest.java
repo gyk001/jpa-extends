@@ -1,26 +1,14 @@
-/**
- * Copyright (c) 2005-2012 https://github.com/zhangkaitao
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
 package cn.guoyukun.spring.jpa.entity.search;
 
 import cn.guoyukun.spring.jpa.entity.search.exception.SearchException;
 import cn.guoyukun.spring.jpa.entity.search.filter.*;
 import cn.guoyukun.spring.jpa.entity.search.utils.SearchableConvertUtils;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import org.apache.shiro.util.CollectionUtils;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.util.CollectionUtils;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * <p>查询条件（包括分页和排序）</p>
@@ -31,11 +19,11 @@ import java.util.Map;
 
 public final class SearchRequest extends Searchable {
 
-    private final Map<String, SearchFilter> searchFilterMap = Maps.newHashMap();
+    private final Map<String, SearchFilter> searchFilterMap = new HashMap<>();
     /**
      * 使用这个的目的是保证拼sql的顺序是按照添加时的顺序
      */
-    private final List<SearchFilter> searchFilters = Lists.newArrayList();
+    private final List<SearchFilter> searchFilters = new ArrayList<>();
 
     private Pageable page;
 

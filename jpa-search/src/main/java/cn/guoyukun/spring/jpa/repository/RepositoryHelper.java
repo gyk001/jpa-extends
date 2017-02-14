@@ -1,28 +1,19 @@
-/**
- * Copyright (c) 2005-2012 https://github.com/zhangkaitao
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
 package cn.guoyukun.spring.jpa.repository;
 
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
-
+import cn.guoyukun.spring.jpa.entity.search.Searchable;
+import cn.guoyukun.spring.jpa.repository.callback.SearchCallback;
+import cn.guoyukun.spring.jpa.repository.support.annotation.EnableQueryCache;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.JpaEntityInformationSupport;
-import org.springframework.orm.jpa.SharedEntityManagerCreator;
 import org.springframework.util.Assert;
 
-import cn.guoyukun.spring.jpa.entity.search.Searchable;
-import cn.guoyukun.spring.jpa.repository.callback.SearchCallback;
-import cn.guoyukun.spring.jpa.repository.support.annotation.EnableQueryCache;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.util.List;
 
 /**
  * 仓库辅助类
@@ -32,15 +23,16 @@ import cn.guoyukun.spring.jpa.repository.support.annotation.EnableQueryCache;
  */
 public class RepositoryHelper {
 
-    private static EntityManager entityManager;
+    private EntityManager entityManager;
     private Class<?> entityClass;
     private boolean enableQueryCache = false;
 
     /**
      * @param entityClass 是否开启查询缓存
      */
-    public RepositoryHelper(Class<?> entityClass) {
+    public RepositoryHelper(Class<?> entityClass, EntityManager entityManager) {
         this.entityClass = entityClass;
+        this.entityManager = entityManager;
 
         EnableQueryCache enableQueryCacheAnnotation =
                 AnnotationUtils.findAnnotation(entityClass, EnableQueryCache.class);
@@ -52,11 +44,11 @@ public class RepositoryHelper {
         this.enableQueryCache = enableQueryCache;
     }
 
-    public static void setEntityManagerFactory(EntityManagerFactory entityManagerFactory) {
-        entityManager = SharedEntityManagerCreator.createSharedEntityManager(entityManagerFactory);
-    }
+//    public static void setEntityManagerFactory(EntityManagerFactory entityManagerFactory) {
+//        entityManager = SharedEntityManagerCreator.createSharedEntityManager(entityManagerFactory);
+//    }
 
-    public static EntityManager getEntityManager() {
+    public EntityManager getEntityManager() {
         Assert.notNull(entityManager, "entityManager must null, please see " +
                 "[cn.guoyukun.spring.jpa.repository.RepositoryHelper#setEntityManagerFactory]");
 
@@ -64,11 +56,11 @@ public class RepositoryHelper {
     }
 
 
-    public static void flush() {
+    public void flush() {
         getEntityManager().flush();
     }
 
-    public static void clear() {
+    public void clear() {
         flush();
         getEntityManager().clear();
     }
