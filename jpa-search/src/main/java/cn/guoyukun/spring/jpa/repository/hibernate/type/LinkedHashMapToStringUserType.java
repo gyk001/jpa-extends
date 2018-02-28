@@ -1,13 +1,5 @@
 package cn.guoyukun.spring.jpa.repository.hibernate.type;
 
-import cn.guoyukun.spring.utils.StringUtils;
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import org.hibernate.HibernateException;
-import org.hibernate.engine.spi.SharedSessionContractImplementor;
-import org.hibernate.usertype.ParameterizedType;
-import org.hibernate.usertype.UserType;
-
 import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +8,15 @@ import java.sql.Types;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
+
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
+
+import cn.guoyukun.spring.utils.StringUtils;
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.usertype.ParameterizedType;
+import org.hibernate.usertype.UserType;
 
 /**
  * 将List转换为指定分隔符分隔的字符串存储 List的元素类型只支持常见的数据类型 可参考{@link org.apache.commons.beanutils.ConvertUtilsBean}
@@ -86,7 +87,7 @@ public class LinkedHashMapToStringUserType implements UserType, ParameterizedTyp
      * @throws java.sql.SQLException
      */
     @Override
-    public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
+    public Object nullSafeGet(ResultSet rs, String[] names, SessionImplementor session, Object owner) throws HibernateException, SQLException {
         String valueStr = rs.getString(names[0]);
         if (StringUtils.isEmpty(valueStr)) {
             return newMap();
@@ -111,7 +112,7 @@ public class LinkedHashMapToStringUserType implements UserType, ParameterizedTyp
      * 我们可以通过PreparedStateme将自定义数据写入到对应的数据库表字段
      */
     @Override
-    public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
+    public void nullSafeSet(PreparedStatement st, Object value, int index, SessionImplementor session) throws HibernateException, SQLException {
         String valueStr;
         if (value == null) {
             valueStr = "";

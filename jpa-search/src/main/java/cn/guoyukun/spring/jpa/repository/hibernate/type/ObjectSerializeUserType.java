@@ -1,15 +1,20 @@
 package cn.guoyukun.spring.jpa.repository.hibernate.type;
 
-import org.apache.commons.codec.binary.Hex;
-import org.hibernate.HibernateException;
-import org.hibernate.engine.spi.SharedSessionContractImplementor;
-import org.hibernate.usertype.UserType;
-
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+
+import org.apache.commons.codec.binary.Hex;
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.usertype.UserType;
 
 /**
  * Object序列化/反序列化
@@ -62,7 +67,7 @@ public class ObjectSerializeUserType implements UserType, Serializable {
      * @throws SQLException
      */
     @Override
-    public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
+    public Object nullSafeGet(ResultSet rs, String[] names, SessionImplementor session, Object owner) throws HibernateException, SQLException {
         ObjectInputStream ois = null;
         try {
             String hexStr = rs.getString(names[0]);
@@ -83,7 +88,7 @@ public class ObjectSerializeUserType implements UserType, Serializable {
      * 我们可以通过PreparedStateme将自定义数据写入到对应的数据库表字段
      */
     @Override
-    public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
+    public void nullSafeSet(PreparedStatement st, Object value, int index, SessionImplementor session) throws HibernateException, SQLException {
         ObjectOutputStream oos = null;
         if (value == null) {
             st.setNull(index, Types.VARCHAR);

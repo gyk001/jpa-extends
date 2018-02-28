@@ -1,5 +1,10 @@
 package cn.guoyukun.spring.jpa.repository;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import cn.guoyukun.spring.jpa.entity.search.Searchable;
 import cn.guoyukun.spring.jpa.repository.callback.SearchCallback;
 import cn.guoyukun.spring.jpa.repository.support.annotation.EnableQueryCache;
@@ -10,10 +15,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.JpaEntityInformationSupport;
 import org.springframework.util.Assert;
-
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import java.util.List;
 
 /**
  * 仓库辅助类
@@ -286,7 +287,7 @@ public class RepositoryHelper {
 
 
     public <T> JpaEntityInformation<T, ?> getMetadata(Class<T> entityClass) {
-        return JpaEntityInformationSupport.getMetadata(entityClass, entityManager);
+        return JpaEntityInformationSupport.getEntityInformation(entityClass, entityManager);
     }
 
     public String getEntityName(Class<?> entityClass) {

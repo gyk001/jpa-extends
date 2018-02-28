@@ -1,5 +1,9 @@
 package cn.guoyukun.spring.jpa.repository.support;
 
+import java.io.Serializable;
+
+import javax.persistence.EntityManager;
+
 import cn.guoyukun.spring.jpa.repository.BaseRepository;
 import cn.guoyukun.spring.jpa.repository.callback.SearchCallback;
 import cn.guoyukun.spring.jpa.repository.support.annotation.SearchableQuery;
@@ -11,13 +15,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean;
-import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.data.repository.core.RepositoryMetadata;
 import org.springframework.data.repository.core.support.RepositoryFactorySupport;
 import org.springframework.util.StringUtils;
-
-import javax.persistence.EntityManager;
-import java.io.Serializable;
 
 /**
  * 基础Repostory简单实现 factory bean
@@ -28,6 +28,10 @@ import java.io.Serializable;
  */
 public class SimpleSearchableRepositoryFactoryBean<R extends JpaRepository<M, ID>, M, ID extends Serializable>
         extends JpaRepositoryFactoryBean<R, M, ID> {
+
+	public SimpleSearchableRepositoryFactoryBean(Class<? extends R> repositoryInterface) {
+		super(repositoryInterface);
+	}
 
 	@Override
 	protected RepositoryFactorySupport createRepositoryFactory(
@@ -57,18 +61,18 @@ class SimpleSearchableRepositoryFactory<M, ID extends Serializable> extends JpaR
 		this.entityManager = entityManager;
 	}
 
-	@Override
-	protected Object getTargetRepository(RepositoryMetadata metadata) {
-		Object object = null;
-		Class<?> repositoryInterface = metadata.getRepositoryInterface();
-		LOG.debug("DAO接口 {}",repositoryInterface);
-        if (isBaseRepository(repositoryInterface)) {
-        	object = doGetTargetRepository(metadata);
-        }else{
-        	object = super.getTargetRepository(metadata);
-        }
-        return object;
-	}
+	//@Override
+	//protected Object getTargetRepository(RepositoryMetadata metadata) {
+	//	Object object = null;
+	//	Class<?> repositoryInterface = metadata.getRepositoryInterface();
+	//	LOG.debug("DAO接口 {}",repositoryInterface);
+     //   if (isBaseRepository(repositoryInterface)) {
+     //   	object = doGetTargetRepository(metadata);
+     //   }else{
+     //   	object = super.getTargetRepository(metadata);
+     //   }
+     //   return object;
+	//}
 	
 	private Object doGetTargetRepository(RepositoryMetadata metadata){
 		Class<?> repositoryInterface = metadata.getRepositoryInterface();
@@ -97,13 +101,13 @@ class SimpleSearchableRepositoryFactory<M, ID extends Serializable> extends JpaR
          return repository;
 	}
 
-	@Override
-	protected <T, ID extends Serializable> SimpleJpaRepository<?, ?> getTargetRepository(
-			RepositoryMetadata metadata, EntityManager entityManager) {
-		SimpleJpaRepository<?, ?> sjr =  super.getTargetRepository(metadata, entityManager);
-		LOG.debug(" {}",sjr);
-		return sjr;
-	}
+	//@Override
+	//protected <T, ID extends Serializable> SimpleJpaRepository<?, ?> getTargetRepository(
+	//		RepositoryMetadata metadata, EntityManager entityManager) {
+	//	SimpleJpaRepository<?, ?> sjr =  super.getTargetRepository(metadata, entityManager);
+	//	LOG.debug(" {}",sjr);
+	//	return sjr;
+	//}
 
 	@Override
 	protected Class<?> getRepositoryBaseClass(RepositoryMetadata metadata) {
