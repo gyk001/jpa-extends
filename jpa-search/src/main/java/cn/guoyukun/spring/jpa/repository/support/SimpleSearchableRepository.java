@@ -1,5 +1,11 @@
 package cn.guoyukun.spring.jpa.repository.support;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
 import cn.guoyukun.spring.jpa.entity.search.Searchable;
 import cn.guoyukun.spring.jpa.repository.BaseRepository;
 import cn.guoyukun.spring.jpa.repository.RepositoryHelper;
@@ -12,21 +18,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
+import org.springframework.data.jpa.repository.support.JpaEntityInformationSupport;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
-
-import javax.persistence.EntityManager;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author yukun.gyk
  * @date 13-5-5 上午11:57
  */
 public class SimpleSearchableRepository<M, ID extends Serializable> extends SimpleJpaRepository<M, ID>
-        implements BaseRepository<M, ID> {
+    implements BaseRepository<M, ID> {
     private static final Logger LOG = LoggerFactory.getLogger(SimpleSearchableRepository.class);
-
 
     public static final String FIND_QUERY_STRING = "from %s x where 1=1 ";
     public static final String COUNT_QUERY_STRING = "select count(x) from %s x where 1=1 ";
@@ -54,6 +55,16 @@ public class SimpleSearchableRepository<M, ID extends Serializable> extends Simp
 
         findAllQL = String.format(FIND_QUERY_STRING, entityName);
         countAllQL = String.format(COUNT_QUERY_STRING, entityName);
+    }
+
+    /**
+     * Creates a new {@link SimpleJpaRepository} to manage objects of the given domain type.
+     *
+     * @param domainClass must not be {@literal null}.
+     * @param em          must not be {@literal null}.
+     */
+    public SimpleSearchableRepository(Class<M> domainClass, EntityManager em) {
+        this((JpaEntityInformation<M, ID>)JpaEntityInformationSupport.getEntityInformation(domainClass, em), em);
     }
 
     @Override
@@ -85,9 +96,9 @@ public class SimpleSearchableRepository<M, ID extends Serializable> extends Simp
         List<M> list = repositoryHelper.findAll(findAllQL, searchable, searchCallback);
         long total = searchable.hasPageable() ? count(searchable) : list.size();
         return new PageImpl<M>(
-                list,
-                searchable.getPage(),
-                total
+            list,
+            searchable.getPage(),
+            total
         );
     }
 
@@ -100,7 +111,7 @@ public class SimpleSearchableRepository<M, ID extends Serializable> extends Simp
     @Override
     public M updateByVo(ID id, Object vo) {
         M model = findOne(id);
-        if(model==null){
+        if (model == null) {
             return null;
         }
         org.springframework.beans.BeanUtils.copyProperties(vo, model);
