@@ -19,14 +19,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.JpaEntityInformationSupport;
+import org.springframework.data.jpa.repository.support.QueryDslJpaRepository;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 
 /**
  * @author yukun.gyk
  * @date 13-5-5 上午11:57
  */
-public class SimpleSearchableRepository<M, ID extends Serializable> extends SimpleJpaRepository<M, ID>
-    implements BaseRepository<M, ID> {
+public class SimpleSearchableRepository<M, ID extends Serializable> extends QueryDslJpaRepository<M, ID>
+    implements BaseRepository<M, ID>, QueryDslPredicateExecutor<M> {
     private static final Logger LOG = LoggerFactory.getLogger(SimpleSearchableRepository.class);
 
     public static final String FIND_QUERY_STRING = "from %s x where 1=1 ";

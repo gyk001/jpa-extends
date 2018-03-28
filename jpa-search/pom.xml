@@ -5,7 +5,7 @@
     <parent>
         <groupId>cn.guoyukun</groupId>
         <artifactId>spring-data-jpa-searchable-parent</artifactId>
-        <version>2.0-SNAPSHOT</version>
+        <version>2.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>spring-data-jpa-searchable</artifactId>
@@ -44,7 +44,11 @@
             <version>1.10</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-jpa</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
