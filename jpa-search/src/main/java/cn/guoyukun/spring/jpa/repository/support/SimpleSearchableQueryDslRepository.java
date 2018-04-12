@@ -19,15 +19,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.JpaEntityInformationSupport;
+import org.springframework.data.jpa.repository.support.QueryDslJpaRepository;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 
 /**
  * @author yukun.gyk
  * @date 13-5-5 上午11:57
  */
-public class SimpleSearchableRepository<M, ID extends Serializable> extends SimpleJpaRepository<M, ID>
-    implements BaseRepository<M, ID> {
-    private static final Logger LOG = LoggerFactory.getLogger(SimpleSearchableRepository.class);
+public class SimpleSearchableQueryDslRepository<M, ID extends Serializable> extends QueryDslJpaRepository<M, ID>
+    implements BaseRepository<M, ID>, QueryDslPredicateExecutor<M> {
+    private static final Logger LOG = LoggerFactory.getLogger(SimpleSearchableQueryDslRepository.class);
 
     public static final String FIND_QUERY_STRING = "from %s x where 1=1 ";
     public static final String COUNT_QUERY_STRING = "select count(x) from %s x where 1=1 ";
@@ -43,7 +45,7 @@ public class SimpleSearchableRepository<M, ID extends Serializable> extends Simp
 
     private SearchCallback searchCallback = SearchCallback.DEFAULT;
 
-    public SimpleSearchableRepository(JpaEntityInformation<M, ID> entityInformation, EntityManager entityManager) {
+    public SimpleSearchableQueryDslRepository(JpaEntityInformation<M, ID> entityInformation, EntityManager entityManager) {
         super(entityInformation, entityManager);
 
         this.entityInformation = entityInformation;
@@ -63,7 +65,7 @@ public class SimpleSearchableRepository<M, ID extends Serializable> extends Simp
      * @param domainClass must not be {@literal null}.
      * @param em          must not be {@literal null}.
      */
-    public SimpleSearchableRepository(Class<M> domainClass, EntityManager em) {
+    public SimpleSearchableQueryDslRepository(Class<M> domainClass, EntityManager em) {
         this((JpaEntityInformation<M, ID>)JpaEntityInformationSupport.getEntityInformation(domainClass, em), em);
     }
 
